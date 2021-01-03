@@ -1,0 +1,70 @@
+<form>
+	<div class="form-group">
+		<label for="adresse">adresse</label>
+		<input
+			type="text"
+			class="form-control"
+			name="adresse"
+			id="adresse"
+			placeholder="adresse"
+			[(ngModel)]="appartement.adresse"
+		/>
+	</div>
+	<div class="form-group">
+		<label for="nbr_chambres">nombre de chambres</label>
+		<input
+			type="text"
+			class="form-control"
+			name="nbr_chambres"
+			id="nbr_chambres"
+			placeholder="nbr_chambres"
+			[(ngModel)]="appartement.nbr_chambres"
+		/>
+	</div>
+	<div class="form-group">
+		<label for="nbr_salle_bains">nombre de salles de bain</label>
+		<input
+			type="number"
+			class="form-control"
+			name="nbr_salle_bains"
+			id="nbr_salle_bains"
+			placeholder="nbr_salle_bains"
+			[(ngModel)]="appartement.nbr_salle_bains"
+		/>
+    </div>
+    <div class="form-group">
+		<label for="prix_nuit">Prix d'une nuit</label>
+		<input
+			type="number"
+			class="form-control"
+			name="prix_nuit"
+			id="prix_nuit"
+			placeholder="prix_nuit"
+			[(ngModel)]="appartement.prix_nuit"
+		/>
+    </div>
+    <div class="form-group">
+		<label for="reserve">Etat de l'appartement</label>
+		<input
+			type="number"
+			class="form-control"
+			name="reserve"
+			id="reserve"
+			placeholder="reserve"
+			[(ngModel)]="appartement.reserve"
+		/>
+	</div>
+	<div class="form-group">
+		<label for="nbrPersonne_max">Nombre de personnes</label>
+		<input
+			type="text"
+			class="form-control"
+			name="nbrPersonne_max"
+			id="nbrPersonne_max"
+			placeholder="nbrPersonne_max"
+			[(ngModel)]="voyageur.nbrPersonne_max"
+		/>
+	</div>
+
+	<button type="submit" class="btn btn-primary" (click)="add_app()">ajouter</button>
+</form>

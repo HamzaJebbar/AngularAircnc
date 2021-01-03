@@ -9,7 +9,9 @@ import { ListVoyageurComponent } from "./components/list-voyageur/list-voyageur.
 import { ProfilVoyageurComponent } from "./components/profil-voyageur/profil-voyageur.component"
 import { AboutComponent } from "./components/about/about.component"
 import { HeaderComponent } from "./components/header/header.component"
-import { FormAddVoyageurComponent } from "./components/form-add-voyageur/form-add-voyageur.component"
+import { FormAddVoyageurComponent } from "./components/form-add-voyageur/form-add-voyageur.component";
+//import { FormAddAppartementComponent } from './components/form-add-appartement/form-add-appartement.component';
+//import { ListAppartementComponent } from './components/list-appartement/list-appartement.component';
 
 @NgModule({
 	declarations: [
@@ -19,6 +21,8 @@ import { FormAddVoyageurComponent } from "./components/form-add-voyageur/form-ad
 		AboutComponent,
 		HeaderComponent,
 		FormAddVoyageurComponent
+	//	FormAddAppartementComponent,
+	//	ListAppartementComponent
 	],
 	imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
 
