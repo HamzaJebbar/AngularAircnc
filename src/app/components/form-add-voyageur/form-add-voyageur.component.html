@@ -1,0 +1,48 @@
+<form>
+	<div class="form-group">
+		<label for="nom">nom</label>
+		<input
+			type="text"
+			class="form-control"
+			name="nom"
+			id="nom"
+			placeholder="nom"
+			[(ngModel)]="voyageur.nom"
+		/>
+	</div>
+	<div class="form-group">
+		<label for="prenom">prenom</label>
+		<input
+			type="text"
+			class="form-control"
+			name="prenom"
+			id="prenom"
+			placeholder="prenom"
+			[(ngModel)]="voyageur.prenom"
+		/>
+	</div>
+	<div class="form-group">
+		<label for="age">age</label>
+		<input
+			type="number"
+			class="form-control"
+			name="age"
+			id="age"
+			placeholder="age"
+			[(ngModel)]="voyageur.age"
+		/>
+	</div>
+	<div class="form-group">
+		<label for="sexe">sexe</label>
+		<input
+			type="text"
+			class="form-control"
+			name="sexe"
+			id="sexe"
+			placeholder="sexe"
+			[(ngModel)]="voyageur.sexe"
+		/>
+	</div>
+
+	<button type="submit" class="btn btn-primary" (click)="add()">ajouter</button>
+</form>

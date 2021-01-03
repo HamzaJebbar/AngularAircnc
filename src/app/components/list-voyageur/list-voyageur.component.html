@@ -1,0 +1,44 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-7 mx-auto">
+			<h3>ajouter un voyageur</h3>
+			<app-form-add-voyageur (addVoyageur)="add($event)"></app-form-add-voyageur>
+
+			<hr />
+
+			<h2>list voyageurs</h2>
+			<table class="table">
+				<thead>
+					<tr>
+						<th>id</th>
+						<th>nom</th>
+						<th>prenom</th>
+						<th>age</th>
+						<th>sexe</th>
+						<th></th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr *ngFor="let voyageur of listVoyageurs">
+						<td>{{ voyageur.id_voy }}</td>
+						<td>{{ voyageur.nom }}</td>
+						<td>{{ voyageur.prenom }}</td>
+						<td>{{ voyageur.age }}</td>
+						<td>{{ voyageur.sexe }}</td>
+						<td>
+							<button class="btn btn-danger" (click)="deleteVoyageur(voyageur)">
+								delete
+							</button>
+						</td>
+						<td>
+							<a class="btn btn-info" routerLink="/voyageurs/{{ voyageur.id_voy }}">
+								update</a
+							>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
