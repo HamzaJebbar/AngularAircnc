@@ -8,7 +8,7 @@ import { Voyageur } from "src/app/voyageur"
 })
 export class FormAddVoyageurComponent implements OnInit {
 	public voyageur: Voyageur = {
-		id: 0,
+		id_voy: 0,
 		nom: "",
 		prenom: "",
 		age: 0,
