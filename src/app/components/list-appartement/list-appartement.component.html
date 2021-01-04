@@ -3,7 +3,7 @@
 		<div class="col-md-7 mx-auto">
             <h3>ajouter un appartement</h3>
             
-            <app-form-add-appartement (addAppartement="add($event)")></app-form-add-appartement>
+            <app-form-add-appartement (addAppartement)="add($event)"></app-form-add-appartement>
 			<hr />
 
 			<h2>list appartements</h2>
@@ -12,11 +12,11 @@
 					<tr>
 						<th>id</th>
 						<th>adresse</th>
-						<th>nombre de chambres</th>
+						<th>nbr de chambres</th>
 						<th>nbr salles de bain</th>
 						<th>prix(nuit)</th>
 						<th>etat</th>
-						<th>nombre de personnes</th>
+						<th>nbr de personnes</th>
 					</tr>
 				</thead>
 				<tbody>

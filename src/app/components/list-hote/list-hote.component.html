@@ -1,0 +1,45 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-7 mx-auto">
+            <h3>ajouter un hote</h3>
+            <app-form-add-hote (addHote)="addHote($event)"></app-form-add-hote>
+
+			<hr />
+
+			<h2>list hotes</h2>
+			<table class="table">
+				<thead>
+					<tr>
+						<th>id</th>
+						<th>nom</th>
+						<th>prenom</th>
+						<th>age</th>
+						<th>sexe</th>
+						<th></th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr *ngFor="let hote of listHotes">
+                        
+						<td>{{ hote.id_voy}}</td>
+						<td>{{ hote.nom }}</td>
+						<td>{{ hote.prenom }}</td>
+						<td>{{ hote.age }}</td>
+						<td>{{ hote.sexe }}</td>
+						<td>
+							<button class="btn btn-danger" (click)="deleteHote(hote)">
+								delete
+							</button>
+						</td>
+						<td>
+							<a class="btn btn-info" routerLink="/hote/{{ hote.id_voy }}">
+								update</a
+							>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>

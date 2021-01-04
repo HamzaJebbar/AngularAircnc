@@ -4,6 +4,6 @@ export interface Appartement {
 	nbr_chambres:number
 	nbr_salle_bains:number
 	prix_nuit:number
-	reserve:string
+	reserve:boolean
 	nbrPersonne_max:number
 }

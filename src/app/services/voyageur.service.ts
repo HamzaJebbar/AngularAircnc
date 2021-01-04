@@ -24,14 +24,14 @@ export class VoyageurService {
 	}
 
 	deleteVoyageur(voyageur: Voyageur) {
-		const url = "http://localhost:8080/delVoy/"+voyageur.id_voy
-		return this.http.delete(url)
+		this.url = "http://localhost:8080/delVoy/"+voyageur.id_voy
+		return this.http.delete(this.url)
 	}
 
 	getVoyageur(id: number): Observable<Voyageur> {
-		const url = "http://localhost:8080/getVoy/" + id
+		this.url = "http://localhost:8080/getVoy/" + id
 
-		return this.http.get<Voyageur>(url)
+		return this.http.get<Voyageur>(this.url)
 	}
 
 	updateVoyageur(voyageur: Voyageur): Observable<Voyageur> {

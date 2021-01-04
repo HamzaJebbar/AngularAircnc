@@ -13,7 +13,7 @@ export class FormAddAppartementComponent implements OnInit {
 	nbr_chambres:0,
 	nbr_salle_bains:0,
 	prix_nuit:0,
-	reserve:"",
+	reserve:false,
 	nbrPersonne_max:0
   }
 

@@ -16,7 +16,8 @@ export class AppartementService {
 	}
 
 	addAppartement(appartement: Appartement): Observable<Appartement> {
-		return this.http.post<any>("http://localhost:8080/addApt", appartement, {
+		this.url = "http://localhost:8080/addApt"
+		return this.http.post<any>(this.url, appartement, {
 			headers: new HttpHeaders({
 				"Content-Type": "application/json"
 			})
@@ -24,20 +25,20 @@ export class AppartementService {
 	}
 
 	deleteAppartement(appartement: Appartement) {
-		const url = "http://localhost:8080/delApt/"+appartement.id_Appartement
-		return this.http.delete(url)
+		this.url = "http://localhost:8080/delApt/"+appartement.id_Appartement
+		return this.http.delete(this.url)
 	}
 
 	getAppartement(id_Appartement: number): Observable<Appartement> {
-		const url = "http://localhost:8080/getApt/" + id_Appartement
+		this.url = "http://localhost:8080/getApt/" + id_Appartement
 
-		return this.http.get<Appartement>(url)
+		return this.http.get<Appartement>(this.url)
 	}
 
 	updateAppartement(appartement: Appartement): Observable<Appartement> {
-		const url = "http://localhost:8080/updateApt/" + appartement.id_Appartement
+		this.url = "http://localhost:8080/updateApt/" + appartement.id_Appartement
 
-		return this.http.put<Appartement>(url, appartement, {
+		return this.http.put<Appartement>(this.url, appartement, {
 			headers: new HttpHeaders({ "Content-Type": "application/json" })
 		})
 	}
