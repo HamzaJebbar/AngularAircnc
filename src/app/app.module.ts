@@ -16,7 +16,7 @@ import { ListAppartementComponent } from './components/list-appartement/list-app
 
 import { FormAddHoteComponent } from './components/form-add-hote/form-add-hote.component';
 import { ListHoteComponent } from './components/list-hote/list-hote.component';
-
+import { ProfilHoteComponent } from './components/profil-hote/profil-hote.component';
 @NgModule({
 	declarations: [
 		AppComponent,
@@ -28,7 +28,9 @@ import { ListHoteComponent } from './components/list-hote/list-hote.component';
 		FormAddAppartementComponent,
 		ListAppartementComponent,
 		FormAddHoteComponent,
-		ListHoteComponent
+		ListHoteComponent,
+		ProfilHoteComponent,
+		
 	],
 	imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
 
