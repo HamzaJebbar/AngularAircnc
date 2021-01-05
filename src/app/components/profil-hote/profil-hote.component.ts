@@ -10,7 +10,7 @@ import { Router } from "@angular/router"
   styleUrls: ['./profil-hote.component.css']
 })
 export class ProfilHoteComponent implements OnInit {
-  public hote = undefined
+  public hote;
   constructor(	
     private route: ActivatedRoute,
 		private hoteService: HoteService,

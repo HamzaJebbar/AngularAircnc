@@ -17,9 +17,11 @@ export class ListVoyageurComponent implements OnInit {
 	}
 
 	add(voyageur: Voyageur): void {
+
 		this.voyageurService
 			.addVoyageur(voyageur)
 			.subscribe((data) => this.listVoyageurs.push(data))
+		console.log(voyageur.appartement_fav)
 	}
 
 	deleteVoyageur(voyageur: Voyageur): void {

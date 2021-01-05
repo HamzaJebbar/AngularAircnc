@@ -29,8 +29,7 @@ import { ProfilHoteComponent } from './components/profil-hote/profil-hote.compon
 		ListAppartementComponent,
 		FormAddHoteComponent,
 		ListHoteComponent,
-		ProfilHoteComponent,
-		
+		ProfilHoteComponent
 	],
 	imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
 

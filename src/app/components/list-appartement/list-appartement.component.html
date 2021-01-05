@@ -10,18 +10,16 @@
 			<table class="table">
 				<thead>
 					<tr>
-						<th>id</th>
 						<th>adresse</th>
-						<th>nbr de chambres</th>
-						<th>nbr salles de bain</th>
+						<th>chambres</th>
+						<th>salles de bain</th>
 						<th>prix(nuit)</th>
 						<th>etat</th>
-						<th>nbr de personnes</th>
+						<th>personnes max</th>
 					</tr>
 				</thead>
 				<tbody>
 					<tr *ngFor="let appartement of listAppartements">
-						<td>{{ appartement.id_Appartement }}</td>
 						<td>{{ appartement.adresse }}</td>
 						<td>{{ appartement.nbr_chambres }}</td>
 						<td>{{ appartement.nbr_salle_bains}}</td>

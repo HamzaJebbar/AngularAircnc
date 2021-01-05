@@ -2,6 +2,7 @@ import { Injectable } from "@angular/core"
 import { Observable } from "rxjs"
 import { HttpClient, HttpHeaders } from "@angular/common/http"
 import { Voyageur } from "../voyageur"
+import { Appartement } from "../appartement"
 
 @Injectable({
 	providedIn: "root"
@@ -40,5 +41,9 @@ export class VoyageurService {
 		return this.http.put<Voyageur>(url, voyageur, {
 			headers: new HttpHeaders({ "Content-Type": "application/json" })
 		})
+	}
+	rmAptFav(voyageur: Voyageur, appartement: Appartement){
+	    const url = "http://localhost:8080/rmAptFav/"+ voyageur.id_voy + "/" + appartement.id_Appartement
+        return this.http.delete(url);
 	}
 }

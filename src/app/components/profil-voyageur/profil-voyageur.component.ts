@@ -1,15 +1,17 @@
-import { Component, OnInit } from "@angular/core"
+import { Component, OnInit,Input } from "@angular/core"
 import { ActivatedRoute } from "@angular/router"
 import { VoyageurService } from "src/app/services/voyageur.service"
 import { Location } from "@angular/common"
 import { Router } from "@angular/router"
+import { Appartement } from "../../appartement"
+import { Voyageur } from "../../voyageur"
 @Component({
 	selector: "app-profil-voyageur",
 	templateUrl: "./profil-voyageur.component.html",
 	styleUrls: ["./profil-voyageur.component.css"]
 })
 export class ProfilVoyageurComponent implements OnInit {
-	public voyageur = undefined
+	@Input() voyageur:Voyageur
 
 	constructor(
 		private route: ActivatedRoute,
@@ -24,10 +26,8 @@ export class ProfilVoyageurComponent implements OnInit {
 
 	getVoyageur(): void {
 		const id = +this.route.snapshot.paramMap.get("id")
-		console.log("id", id)
 
 		this.voyageurService.getVoyageur(id).subscribe((voyageur) => {
-			console.log(voyageur)
 			this.voyageur = voyageur
 		})
 	}
@@ -35,8 +35,13 @@ export class ProfilVoyageurComponent implements OnInit {
 	update(): void {
 		this.voyageurService.updateVoyageur(this.voyageur).subscribe((voyageur) => {
 			this.voyageur = voyageur
-			console.log(voyageur)
 			this.router.navigate(["/voyageurs"])
 		})
+	}
+	rmAptFav(appartement: Appartement){
+	    this.voyageur.appartement_fav = this.voyageur.appartement_fav.filter(a=> a.id_Appartement!==appartement.id_Appartement)
+	    this.voyageurService.rmAptFav(this.voyageur,appartement).subscribe();
+	}
+	rentApt(appartement: Appartement){
 	}
 }
