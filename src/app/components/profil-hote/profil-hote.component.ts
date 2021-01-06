@@ -35,15 +35,6 @@ export class ProfilHoteComponent implements OnInit {
 			this.hote = hote
 		})
   }
-  
-  
-	update_hote(): void {
-		this.hoteService.updateHote(this.hote).subscribe((hote) => {
-			this.hote = hote
-			console.log(hote)
-			this.router.navigate(["/hotes"])
-		})
-	}
 	deleteApt(appartement: Appartement): void{
 	    this.hote.appartements = this.hote.appartements.filter(a=> a.id_Appartement!==appartement.id_Appartement)
 	    this.hote.appartement_fav = this.hote.appartement_fav.filter(a=> a.id_Appartement!==appartement.id_Appartement)

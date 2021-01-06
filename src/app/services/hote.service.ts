@@ -36,14 +36,5 @@ export class HoteService {
 
 		return this.http.get<Hote>(this.url)
 	}
-	
-	updateHote(hote: Hote): Observable<Hote> {
-		const url = "http://localhost:8080/updateHot/" + hote.id_voy
 
-		return this.http.put<Hote>(url, hote, {
-			headers: new HttpHeaders({ "Content-Type": "application/json" })
-		})
-	}
-
-	
 }

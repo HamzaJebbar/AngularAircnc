@@ -11,7 +11,7 @@ import { Voyageur } from "../../voyageur"
 	styleUrls: ["./profil-voyageur.component.css"]
 })
 export class ProfilVoyageurComponent implements OnInit {
-	@Input() voyageur:Voyageur
+	@Input() voyageur?:Voyageur
 
 	constructor(
 		private route: ActivatedRoute,
@@ -35,6 +35,7 @@ export class ProfilVoyageurComponent implements OnInit {
 	update(): void {
 		this.voyageurService.updateVoyageur(this.voyageur).subscribe((voyageur) => {
 			this.voyageur = voyageur
+			this.router.navigate(["/voyageurs"])
 		})
 	}
 	aptFav(appartement: Appartement){
