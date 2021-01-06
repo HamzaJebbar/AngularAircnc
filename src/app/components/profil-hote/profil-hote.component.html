@@ -1,58 +1,32 @@
-<!--<div *ngIf="hote">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-7 mx-auto">
-				<form>
-					<div class="form-group">
-						<label for="nom">nom</label>
-						<input
-							type="text"
-							class="form-control"
-							name="nom"
-							id="nom"
-							placeholder="nom"
-							[(ngModel)]="hote.nom"
-						/>
-					</div>
-					<div class="form-group">
-						<label for="prenom">prenom</label>
-						<input
-							type="text"
-							class="form-control"
-							name="prenom"
-							id="prenom"
-							placeholder="prenom"
-							[(ngModel)]="hote.prenom"
-						/>
-					</div>
-					<div class="form-group">
-						<label for="age">age</label>
-						<input
-							type="number"
-							class="form-control"
-							name="age"
-							id="age"
-							placeholder="age"
-							[(ngModel)]="hote.age"
-						/>
-					</div>
-					<div class="form-group">
-						<label for="sexe">sexe</label>
-						<input
-							type="text"
-							class="form-control"
-							name="sexe"
-							id="sexe"
-							placeholder="sexe"
-							[(ngModel)]="hote.sexe"
-						/>
-					</div>
-
-					<button type="submit" class="btn btn-primary" (click)="update_hote()">update</button>
-				</form>
-			</div>
-		</div>
-	</div>
-</div>
--->
 <app-profil-voyageur [voyageur]="hote"></app-profil-voyageur>
+<div class="container">
+    <div class="row">
+        <div class="col-md-7 mx-auto">
+            <h3>Vos appartements</h3>
+            <hr />
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>adresse</th>
+                    <th>chambres</th>
+                    <th>salles de bain</th>
+                    <th>prix(nuit)</th>
+                </tr>
+                </thead>
+                <tbody *ngIf="hote">
+                <tr *ngFor="let appartement of hote.appartements">
+                    <td>{{ appartement.adresse }}</td>
+                    <td>{{ appartement.nbr_chambres }}</td>
+                    <td>{{ appartement.nbr_salle_bains}}</td>
+                    <td>{{ appartement.prix_nuit }}</td>
+                    <td>
+                        <button class="btn btn-danger" (click)="deleteApt(appartement)">
+                            delete
+                        </button>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

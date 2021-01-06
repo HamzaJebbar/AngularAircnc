@@ -14,7 +14,8 @@ export class FormAddHoteComponent implements OnInit {
 		age: 0,
 		sexe: "",
 		appartement_fav: null,
-		appartement_loue:null
+		appartement_loue:null,
+		appartements:null
   }
   
   @Output()

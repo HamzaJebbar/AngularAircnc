@@ -42,8 +42,18 @@ export class VoyageurService {
 			headers: new HttpHeaders({ "Content-Type": "application/json" })
 		})
 	}
-	rmAptFav(voyageur: Voyageur, appartement: Appartement){
-	    const url = "http://localhost:8080/rmAptFav/"+ voyageur.id_voy + "/" + appartement.id_Appartement
-        return this.http.delete(url);
+	aptFav(appartement: Appartement): Observable<Voyageur>{
+	    const url = "http://localhost:8080/aptFav/" + appartement.voyageur.id_voy
+	    console.log(appartement)
+	    console.log(appartement.voyageur)
+	    return this.http.put<Voyageur>(url,appartement,{
+            headers: new HttpHeaders({ "Content-Type": "application/json" })
+        })
 	}
+	rentApt(appartement: Appartement): Observable<Voyageur>{
+        const url = "http://localhost:8080/rentApt/" + appartement.voyageur.id_voy
+        return this.http.put<Voyageur>(url,appartement,{
+            headers: new HttpHeaders({ "Content-Type": "application/json" })
+        })
+    }
 }

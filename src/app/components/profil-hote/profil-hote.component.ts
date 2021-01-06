@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Appartement } from 'src/app/appartement';
 import { ActivatedRoute } from "@angular/router"
 import { HoteService } from "src/app/services/hote.service"
+import { AppartementService } from "src/app/services/appartement.service"
 import { Location } from "@angular/common"
 import { Router } from "@angular/router"
 @Component({
@@ -14,6 +15,7 @@ export class ProfilHoteComponent implements OnInit {
   constructor(	
     private route: ActivatedRoute,
 		private hoteService: HoteService,
+		private appartementService: AppartementService,
 		private location: Location,
 		private router: Router) { }
 
@@ -38,6 +40,10 @@ export class ProfilHoteComponent implements OnInit {
 			console.log(hote)
 			this.router.navigate(["/hotes"])
 		})
+	}
+	deleteApt(appartement: Appartement): void{
+	    this.appartementService.deleteAppartement(appartement).subscribe();
+	    this.hote = this.getHote()
 	}
 }
 

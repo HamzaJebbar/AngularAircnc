@@ -38,10 +38,11 @@ export class ProfilVoyageurComponent implements OnInit {
 			this.router.navigate(["/voyageurs"])
 		})
 	}
-	rmAptFav(appartement: Appartement){
+	aptFav(appartement: Appartement){
 	    this.voyageur.appartement_fav = this.voyageur.appartement_fav.filter(a=> a.id_Appartement!==appartement.id_Appartement)
-	    this.voyageurService.rmAptFav(this.voyageur,appartement).subscribe();
+	    this.voyageurService.aptFav(appartement).subscribe();
 	}
 	rentApt(appartement: Appartement){
 	}
+
 }

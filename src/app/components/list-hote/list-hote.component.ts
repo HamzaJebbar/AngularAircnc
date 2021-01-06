@@ -15,6 +15,7 @@ export class ListHoteComponent implements OnInit {
   ngOnInit(): void {
 
     this.hoteService.getHotes().subscribe((data) => (this.listHotes = data))
+    console.log(this.listHotes)
   }
 
   addHote(hote: Hote): void {

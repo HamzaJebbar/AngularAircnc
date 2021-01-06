@@ -57,12 +57,11 @@
 <div class="container">
 	<div class="row">
 		<div class="col-md-7 mx-auto">
-			<h3>Appartement favoris</h3>
+			<h3>Appartements favoris</h3>
 			<hr />
 			<table class="table">
 				<thead>
 				<tr>
-					<th>id</th>
 					<th>adresse</th>
 					<th>chambres</th>
 					<th>salles de bain</th>
@@ -73,7 +72,6 @@
 				</thead>
 				<tbody *ngIf="voyageur">
 				<tr *ngFor="let appartement of voyageur.appartement_fav">
-					<td>{{ appartement.id_Appartement }}</td>
 					<td>{{ appartement.adresse }}</td>
 					<td>{{ appartement.nbr_chambres }}</td>
 					<td>{{ appartement.nbr_salle_bains}}</td>
@@ -82,13 +80,49 @@
 					<td>{{ appartement.nbrPersonne_max }}</td>
 
 					<td>
-						<button class="btn btn-danger" (click)="rmAptFav(appartement)">
+						<button class="btn btn-danger" (click)="aptFav(appartement)">
 							delete
 						</button>
 					</td>
 					<td>
 						<a class="btn btn-info" (click)="rentApt(appartement)">
 							rent </a>
+					</td>
+				</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+<div class="container">
+	<div class="row">
+		<div class="col-md-7 mx-auto">
+			<h3>Appartements loués</h3>
+			<hr />
+			<table class="table">
+				<thead>
+				<tr>
+					<th>adresse</th>
+					<th>chambres</th>
+					<th>salles de bain</th>
+					<th>prix(nuit)</th>
+					<th>etat</th>
+					<th>personnes max</th>
+				</tr>
+				</thead>
+				<tbody *ngIf="voyageur">
+				<tr *ngFor="let appartement of voyageur.appartement_loue">
+					<td>{{ appartement.adresse }}</td>
+					<td>{{ appartement.nbr_chambres }}</td>
+					<td>{{ appartement.nbr_salle_bains}}</td>
+					<td>{{ appartement.prix_nuit }}</td>
+					<td>{{ appartement.reserve }}</td>
+					<td>{{ appartement.nbrPersonne_max }}</td>
+
+					<td>
+						<button class="btn btn-danger" (click)="rentApt(appartement)">
+							leave
+						</button>
 					</td>
 				</tr>
 				</tbody>
