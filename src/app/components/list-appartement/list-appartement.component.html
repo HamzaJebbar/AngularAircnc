@@ -39,7 +39,7 @@
 							</button>
 						</td>
 						<td>
-							<button class="btn btn-success" (click)="rentApt(appartement)">
+							<button *ngIf="appartement.reserve==false" class="btn btn-success" (click)="rentApt(appartement)">
 								rent
 							</button>
 						</td>

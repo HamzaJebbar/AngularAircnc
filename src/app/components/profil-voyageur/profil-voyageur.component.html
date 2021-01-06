@@ -66,8 +66,7 @@
 					<th>chambres</th>
 					<th>salles de bain</th>
 					<th>prix(nuit)</th>
-					<th>etat</th>
-					<th>personnes max</th>
+					<th>favoris</th>
 				</tr>
 				</thead>
 				<tbody *ngIf="voyageur">
@@ -76,18 +75,13 @@
 					<td>{{ appartement.nbr_chambres }}</td>
 					<td>{{ appartement.nbr_salle_bains}}</td>
 					<td>{{ appartement.prix_nuit }}</td>
-					<td>{{ appartement.reserve }}</td>
-					<td>{{ appartement.nbrPersonne_max }}</td>
 
 					<td>
-						<button class="btn btn-danger" (click)="aptFav(appartement)">
-							delete
+						<button class="btn btn-info" (click)="aptFav(appartement)">
+							favoris
 						</button>
 					</td>
-					<td>
-						<a class="btn btn-info" (click)="rentApt(appartement)">
-							rent </a>
-					</td>
+
 				</tr>
 				</tbody>
 			</table>
@@ -106,8 +100,7 @@
 					<th>chambres</th>
 					<th>salles de bain</th>
 					<th>prix(nuit)</th>
-					<th>etat</th>
-					<th>personnes max</th>
+					<th>quitter</th>
 				</tr>
 				</thead>
 				<tbody *ngIf="voyageur">
@@ -116,8 +109,6 @@
 					<td>{{ appartement.nbr_chambres }}</td>
 					<td>{{ appartement.nbr_salle_bains}}</td>
 					<td>{{ appartement.prix_nuit }}</td>
-					<td>{{ appartement.reserve }}</td>
-					<td>{{ appartement.nbrPersonne_max }}</td>
 
 					<td>
 						<button class="btn btn-danger" (click)="rentApt(appartement)">

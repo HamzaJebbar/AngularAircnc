@@ -43,9 +43,9 @@ export class VoyageurService {
 		})
 	}
 	aptFav(appartement: Appartement): Observable<Voyageur>{
-	    const url = "http://localhost:8080/aptFav/" + appartement.voyageur.id_voy
 	    console.log(appartement)
 	    console.log(appartement.voyageur)
+	    const url = "http://localhost:8080/aptFav/" + appartement.voyageur.id_voy
 	    return this.http.put<Voyageur>(url,appartement,{
             headers: new HttpHeaders({ "Content-Type": "application/json" })
         })
@@ -55,5 +55,6 @@ export class VoyageurService {
         return this.http.put<Voyageur>(url,appartement,{
             headers: new HttpHeaders({ "Content-Type": "application/json" })
         })
+
     }
 }

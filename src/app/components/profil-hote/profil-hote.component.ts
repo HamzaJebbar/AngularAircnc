@@ -3,6 +3,8 @@ import { Appartement } from 'src/app/appartement';
 import { ActivatedRoute } from "@angular/router"
 import { HoteService } from "src/app/services/hote.service"
 import { AppartementService } from "src/app/services/appartement.service"
+import { VoyageurService } from "src/app/services/voyageur.service"
+import { Voyageur } from "../../voyageur"
 import { Location } from "@angular/common"
 import { Router } from "@angular/router"
 @Component({
@@ -16,6 +18,7 @@ export class ProfilHoteComponent implements OnInit {
     private route: ActivatedRoute,
 		private hoteService: HoteService,
 		private appartementService: AppartementService,
+		private voyageurService: VoyageurService,
 		private location: Location,
 		private router: Router) { }
 
@@ -42,9 +45,21 @@ export class ProfilHoteComponent implements OnInit {
 		})
 	}
 	deleteApt(appartement: Appartement): void{
+	    this.hote.appartements = this.hote.appartements.filter(a=> a.id_Appartement!==appartement.id_Appartement)
+	    this.hote.appartement_fav = this.hote.appartement_fav.filter(a=> a.id_Appartement!==appartement.id_Appartement)
+	    this.hote.appartement_loue = this.hote.appartement_loue.filter(a=> a.id_Appartement!==appartement.id_Appartement)
 	    this.appartementService.deleteAppartement(appartement).subscribe();
-	    this.hote = this.getHote()
 	}
+    aptFav(appartement: Appartement){
+        appartement.voyageur = this.hote
+        this.hote.appartement_fav = this.hote.appartement_fav.filter(a=> a.id_Appartement!==appartement.id_Appartement)
+        this.voyageurService.aptFav(appartement).subscribe();
+    }
+    rentApt(appartement: Appartement){
+        appartement.voyageur = this.hote
+        this.hote.appartement_loue = this.hote.appartement_loue.filter(a=> a.id_Appartement!==appartement.id_Appartement)
+        this.voyageurService.rentApt(appartement).subscribe();
+    }
 }
 
 

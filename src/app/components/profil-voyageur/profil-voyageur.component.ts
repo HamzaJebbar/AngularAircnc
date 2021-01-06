@@ -35,14 +35,17 @@ export class ProfilVoyageurComponent implements OnInit {
 	update(): void {
 		this.voyageurService.updateVoyageur(this.voyageur).subscribe((voyageur) => {
 			this.voyageur = voyageur
-			this.router.navigate(["/voyageurs"])
 		})
 	}
 	aptFav(appartement: Appartement){
+	    appartement.voyageur = this.voyageur
 	    this.voyageur.appartement_fav = this.voyageur.appartement_fav.filter(a=> a.id_Appartement!==appartement.id_Appartement)
 	    this.voyageurService.aptFav(appartement).subscribe();
 	}
 	rentApt(appartement: Appartement){
+	    appartement.voyageur = this.voyageur
+        this.voyageur.appartement_loue = this.voyageur.appartement_loue.filter(a=> a.id_Appartement!==appartement.id_Appartement)
+        this.voyageurService.rentApt(appartement).subscribe();
 	}
 
 }

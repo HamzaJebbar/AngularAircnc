@@ -22,8 +22,8 @@ export class ListAppartementComponent implements OnInit {
     }
 
     add(appartement: Appartement): void {
-      this.listAppartements.push(appartement)
-      this.appartementService.addAppartement(appartement).subscribe()
+
+      this.appartementService.addAppartement(appartement).subscribe((data)=>(this.listAppartements.push(appartement)))
 
     }
 
